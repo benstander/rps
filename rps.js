@@ -72,25 +72,3 @@ document.addEventListener('DOMContentLoaded', getHumanChoice);
 
 
 
-
-
-
-function rpsLogic(computerPoints, humanPoints) {
-    if ((computerChoice == 'rock' && humanChoice == 'scissors') || 
-        (computerChoice == 'scissors' && humanChoice == 'paper') || 
-        (computerChoice == 'paper' && humanChoice == 'rock')) {
-        computerPoints++;
-    } else if ((humanChoice == 'rock' && computerChoice == 'scissors') || 
-               (humanChoice == 'scissors' && computerChoice == 'paper') || 
-               (humanChoice == 'paper' && computerChoice == 'rock')) {
-        humanPoints++;
-    }
-
-    const scores = document.querySelector(`.scores`);
-    const totalHumanPoints = document.createElement(`p`);
-    const totalComputerPoints = document.createElement(`p`);
-    totalHumanPoints.textContent = `Total human points: ${humanPoints}`;
-    totalComputerPoints.textContent = `Total computer points: ${computerPoints}`;
-    scores.appendChild(totalHumanPoints);
-    scores.appendChild(totalComputerPoints);
-}
